@@ -24,4 +24,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
       this.igChangeSub.unsubscribe();
   }
 
+  onEditItem(index: number) {
+    //pass index value we receive from the template iterating over collection or items and passing it to the Subject within the slService
+    this.slService.startedEditing.next(index);
+  }
+
 }
